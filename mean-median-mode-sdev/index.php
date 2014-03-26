@@ -81,6 +81,8 @@ echo $formating_html->puzzle_image($puzzle_name);
     echo '<h2>Median = '.median($numbers).'</h2>';
     echo '<h2>Mode = '.mode($numbers).'</h2>';
     echo '<h2>Standard Deviation = '.standard_deviation($numbers).'</h2>';
+    
+    echo '<br><script src="https://gist.github.com/mattconk/9786496.js"></script>';
 
 echo '</body>';
 	

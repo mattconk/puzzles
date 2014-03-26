@@ -49,4 +49,6 @@ echo $formating_html->puzzle_image($puzzle_name);
     echo '<br>';
     echo $formating_arrays->display_array(double_values($input), 'Output');
 
+    echo '<br><script src="https://gist.github.com/mattconk/9786384.js"></script>';
+    
 echo '</body>';

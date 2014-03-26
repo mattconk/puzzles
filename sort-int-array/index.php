@@ -34,6 +34,8 @@ echo $formating_html->puzzle_image($puzzle_name);
     echo $formating_arrays->display_array($unsorted_array, 'Unsorted Array');
     echo '<br>';
     echo $formating_arrays->display_array(sort_array($unsorted_array), 'Sorted Array');
+    
+    echo '<br><br><script src="https://gist.github.com/mattconk/9786532.js"></script>';
 
 echo '</body>';
 	

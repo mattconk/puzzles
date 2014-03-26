@@ -36,13 +36,14 @@ function title_case($string)
     return trim($result);
 }
 
-
 echo $formating_html->page_open($puzzle_name);
 echo $formating_html->puzzle_image($puzzle_name);
 
     $string = 'you are given a constant with a lowercase-only sentence. transform the sentence so that the first character of each word is in upper case. ';
     echo $string.'<br>';
     echo title_case($string);
+    
+    echo '<br><br><script src="https://gist.github.com/mattconk/9786562.js"></script>';
 
 echo '</body>';
 	

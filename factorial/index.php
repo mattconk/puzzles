@@ -41,6 +41,8 @@ echo $formating_html->puzzle_image($puzzle_name);
     {
         echo $i.'! = '.factorial($i).'<br>';
     }
+    
+    echo '<br><script src="https://gist.github.com/mattconk/9786442.js"></script>';
 
 echo '</body>';
 	
