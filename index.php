@@ -5,7 +5,6 @@
  * @author Matthew Conk <mattconk@gmail.com>
  * @version Sep 22, 2013
  * @package Puzzle App
- *
  */
 require_once 'classes/formating_html.php';
 $formating_html = new Formating_Html();
