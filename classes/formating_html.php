@@ -34,14 +34,15 @@ class Formating_Html {
     }
     
     /**
-     * takes a hypenated string and returns it as humanized title case
+     * removes characters from a string to make it more human readable
      * 
      * @param string $name the string to convert
      * @return string
      */
     public function title($name)
     {
-        $title =  ucwords(str_replace("-", " ", str_replace("./", "", $name)));
-        return $title;
+        $name = str_replace(array('.', '/'), '', $name);
+    	$name =  ucwords(str_replace('-', ' ', $name));
+        return $name;
     }
 }
