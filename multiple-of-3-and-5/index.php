@@ -1,6 +1,6 @@
 <?php
 /** 
- * Multiples of 3 & Five
+ * Sum of Multiples of 3 and 5 between 0 and 1000
  * 
  * @author Matthew Conk <mattconk@gmail.com> 
  * @version Apr 7, 2014
@@ -14,54 +14,58 @@ $formating_arrays = new Formating_Arrays();
 $puzzle_name = 'multiple-of-3-and-5';
 
 /**
- * Builds an array of Unique numbers of the multiples of a given array of numbers under a max number
+ * gets the sum of all multiples of a given number between 0 and a given number
  * 
- * @param int $max Searching for all multiples under this number
- * @param array $multiple Array of numbers to look for the multiples of
+ * @param int $target The number to find the sum of all multiples too
+ * @param int $multiple The multiple
  * 
- * @return array Returns all of the unique multiples under the max number, using the array of multiples.
+ * @return int The sum of all of the multiples between 0 and $target
  */
-function multiples($max, $multiple)
+function math($target, $multiple)
+{
+    $p = floor(($target-1) / $multiple);
+    return floor($multiple * ($p * ($p+1)) / 2);
+}
+
+/**
+ * Takes an array of multiples, determines the sum of all the multiples from 0 to a Max number, and removes the duplicates
+ * 
+ * In order to not report duplicates we have to add all of determin the sum of multiples for each item in the array add
+ *      each one together, then substract the sum of multiples of the product of the array.
+ * 
+ * @param int $target The number to find the sum of all multiples too (0 to Max)
+ * @param array $multiple Array of multiples to use
+ * 
+ * @return int The sum of all of the multiples between 0 and $target
+ */
+function multiples($target, $multiple)
 {
     $count = count($multiple);
-    $result = array();
+    $result = 0;
     
-    for($i=1; $i<$max; $i++)
+    for ($i=0; $i<$count; $i++)
     {
-        for ($x=0; $x<$count; $x++)
-        {
-            if ($i % $multiple[$x] == 0)
-            {
-                array_push($result, $i);
-            }
-        }
-    }    
-    return array_unique($result);  
+        $result += math($target, $multiple[$i]);
+    }     
+    
+    $result -= math($target, array_product($multiple));
+    return $result;
 }
 
-function SumDivisibleBy($target, $multiple)
-{
-    $p = $target % $multiple;
-    return ($multiple * ($p * ($p+1))) % 2;
-}
 
 echo $formating_html->page_open($puzzle_name);
-$puzzle = '<h3>Puzzle:</h3>'.
-           'If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.'; 
+$puzzle = '<h3>Puzzle:</h3><p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.</p>'; 
 
-echo 5%3;
-exit;    
-
-echo $puzzle;
-    echo '<br><br>';
-    $max = 10;
-    $multiple = array(3,5);
-    $results = multiples($max, $multiple);
-    echo $formating_arrays->display_array($results, 'Multiples').'<br>';
-    echo 'Sum of Multiples = '.array_sum($results);
-    echo '<br><br>';
-    echo SumDivisibleBy($max-1, 3); //+ SumDivisibleBy($max-1, 5) - SumDivisibleBy($max-1, 15);
+    echo $puzzle;
+    echo '<a href="http://projecteuler.net/problem=1" target="_blank">Puzzles Page</a>';
+    echo '<br><hr>';
     
+    $max = 1000;
+    $multiple = array(3,5);
+    echo 'Sum of all multiples of '.implode(', ',$multiple).' below '.$max.' is '.multiples($max, $multiple);
+
+    echo '<br>';
+    echo '<br><script src="https://gist.github.com/mattconk/10031113.js"></script>';
 
 echo '</body>';
 	
