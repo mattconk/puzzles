@@ -11,7 +11,7 @@ require_once '../classes/formating_html.php';
 $formating_html = new Formating_Html();
 $formating_arrays = new Formating_Arrays();
 
-$puzzle_name = 'multiple-of-3-and-5';
+$puzzle_name = '1-multiple-of-3-and-5';
 
 /**
  * gets the sum of all multiples of a given number between 0 and a given number
