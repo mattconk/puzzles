@@ -1,6 +1,6 @@
 <?php
 /** 
- * Sum of Multiples of 3 and 5 between 0 and 1000
+ * Functions to sum, given multiples to a specific number
  * 
  * @author Matthew Conk <mattconk@gmail.com> 
  * @version Apr 7, 2014
@@ -30,9 +30,9 @@ function math($target, $multiple)
 /**
  * Takes an array of multiples, determines the sum of all the multiples from 0 to a Max number, and removes the duplicates
  * 
- * In order to not report duplicates we have to add all of determin the sum of multiples for each item in the array add
- *      each one together, then substract the sum of multiples of the product of the array.
- * 
+ * To remove the duplicates we sum the sums of each multiples and subtract the sum or their product
+ *      ie.. sum(a) + sum(b) - sum(a*b)
+ *      
  * @param int $target The number to find the sum of all multiples too (0 to Max)
  * @param array $multiple Array of multiples to use
  * 

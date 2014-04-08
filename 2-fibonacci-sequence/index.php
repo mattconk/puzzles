@@ -14,7 +14,7 @@ $formating_arrays = new Formating_Arrays();
 $puzzle_name = '2-fibonacci-sequence';
 
 /**
- * generates a Fibonacci Squence number using recursive finctions
+ * generates a Fibonacci Squence number using recursive function
  * 
  * @param int $n The value to find the Fibonacci Sequence value for
  * @return int The next number in the Fibonacci Sequence.
