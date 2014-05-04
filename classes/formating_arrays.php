@@ -46,5 +46,16 @@ class Formating_Arrays {
         
         return $title.' = ( '.implode(', ',$numbers).' )';
     }
+    
+    /**
+     * test function to ensure I have git and eclipse set up correctly.
+     * 
+     * @return boolean
+     */
+    function testing()
+    {
+    	//A basic function to make sure I git working correctly in linux
+    	return FALSE;
+    }
 }
 
